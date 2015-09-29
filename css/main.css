@@ -99,8 +99,38 @@ textarea {
     src: url(../fonts/Gotham-Bold.otf);
 }
 
-h1{
-    font-family: Gotham-Bold;
+body{
+    margin-top: 100px;
+}
+
+#header-container{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#logo{
+    display: inline-block;
+    width: 500px;
+    height: 100%;
+    border: 1px solid black
+}
+
+#nav{
+    display: inline-block;
+    float: right;
+    width: 700px;
+    height: 100%;
+    border: 1px solid black
+}
+
+#footer{
+    display: block;
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
 }
 
 
