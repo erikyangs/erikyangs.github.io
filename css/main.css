@@ -94,8 +94,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-p{
-    font-family: Gotham;
+@font-face {
+    font-family: Gotham-Bold;
+    src: url(../fonts/Gotham-Bold.otf);
+}
+
+h1{
+    font-family: Gotham-Bold;
 }
 
 
