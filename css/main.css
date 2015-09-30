@@ -203,8 +203,19 @@ img{
         font-size: 15px;
     }
 
-    img{
-        max-width: 300px;
+    #logo{
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        border: 1px solid black
+    }
+
+    #nav{
+        position: absolute;
+        right: 0px;
+        width: 200px;
+        height: 100%;
+        border: 1px solid black
     }
 }
 
