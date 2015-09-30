@@ -179,12 +179,26 @@ textarea {
 /* ==========================================================================
    RESPONSIVENESS!!!11!1!1!
    ========================================================================== */
+/*For Phones*/
 @media (max-width: 700px){
+    #header{
+        height: 100px;
+    }
+
+    #header-container{
+        padding:20px 0px 20px 0px;
+        width: 265px;
+    }
+
     #erikyang{
         font-size:40px;
+        line-height: 40px;
+    }
+
+    #erikyang-subtitle{
+        font-size: 15px;
     }
 }
-
 
 
 
