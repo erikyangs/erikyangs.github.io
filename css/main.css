@@ -214,7 +214,7 @@ img{
 }
 
 /*For Trolls Who Want Impossibly Small Windows*/
-@media (max-width: 450px){
+@media (max-width: 420px){
     #footer{
         display: none;
     }
