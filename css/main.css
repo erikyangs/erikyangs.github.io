@@ -99,44 +99,62 @@ textarea {
     src: url(../fonts/Gotham-Bold.otf);
 }
 
-body{
-    margin-top: 100px;
-    font-family: Roboto;
+@font-face{
+    font-family: Gotham-Thin;
+    src: url(../fonts/Gotham-Thin.ttf);
 }
 
-#header-container{
-    position: fixed;
-    top: 0px;
-    width: 100%;
+#header-block{
+    height: 200px;
+    background-color: #FFFFFF;
+}
+
+#name{
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    font-family: Gotham-Bold;
+    font-size: 120px;
+    border: 1px solid black;
+}
+
+#name strong{
+    font-family: Gotham-Thin;
+    font-weight: normal;
+}
+
+#nav-container{
+    position: relative;
     height: 100px;
+    background-color: #000C17;
     border: 1px solid black;
 }
 
 #logo{
-    display: inline-block;
+    position: absolute;
     width: 500px;
     height: 100%;
     border: 1px solid black
 }
 
 #nav{
-    display: inline-block;
-    float: right;
+    position: absolute;
+    right: 0px;
     width: 700px;
     height: 100%;
     border: 1px solid black
 }
 
 #construction{
-    margin-top: 200px;
+    margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
 }
 
 #footer{
     display: block;
-    width: 100%;
     height: 100px;
+    background-color: #A52A2A;
     border: 1px solid black;
 }
 
