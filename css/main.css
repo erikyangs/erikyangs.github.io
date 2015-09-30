@@ -177,8 +177,9 @@ img{
 
 
 
-
-
+#anti-troll{
+    display: none;
+}
 
 /* ==========================================================================
    RESPONSIVENESS!!!11!1!1!
@@ -204,18 +205,32 @@ img{
     }
 
     #logo{
-        position: absolute;
         width: 200px;
-        height: 100%;
-        border: 1px solid black
     }
 
     #nav{
-        position: absolute;
-        right: 0px;
         width: 200px;
+    }
+}
+
+/*For Trolls Who Want Impossibly Small Windows*/
+@media (max-width: 450px){
+    #footer{
+        display: none;
+    }
+
+    #anti-troll{
+        display: block;
+        position: absolute;
+        top:0px;
+
         height: 100%;
-        border: 1px solid black
+        width: 100%;
+
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding-top: 100px;
     }
 }
 
