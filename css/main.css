@@ -139,26 +139,46 @@ img{
     line-height: 0px;
 }
 
-#nav-container{
-    position: relative;
-    height: 100px;
+#nav{
+    height: 50px;
     background-color: #000C17;
     border: 1px solid black;
+    color:white;
 }
 
-#logo{
-    position: absolute;
-    width: 500px;
-    height: 100%;
-    border: 1px solid black
-}
-
-#nav{
-    position: absolute;
-    right: 0px;
+#nav-bar{
+    margin: auto;
     width: 700px;
     height: 100%;
-    border: 1px solid black
+    border: 1px solid white;
+}
+
+#slider{
+    background-color: #222222;
+    background-image: url("../img/CoverPhoto.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+}
+
+#hello{
+    position: relative;
+    display: inline-block;
+
+    text-align: left;
+    float:left;
+    margin-left: 50%;
+    top: 25%;
+
+    height: 85px;
+    background-color: #FFFFFF;
+    
+    font-family: Gotham-Bold;
+    font-size: 50px;
+    line-height: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #F2023F;
 }
 
 #construction{
@@ -168,10 +188,8 @@ img{
 }
 
 #footer{
-    display: block;
-    height: 100px;
     background-color: #A52A2A;
-    border: 1px solid black;
+    height: 100px;
 }
 
 
@@ -204,14 +222,13 @@ img{
         font-size: 15px;
     }
 
-    #logo{
-        width: 200px;
-    }
-
-    #nav{
-        width: 200px;
+    #slider{
+        background-size: 700px;
+        background-position: center;
+        height: 300px;
     }
 }
+
 
 /*For Trolls Who Want Impossibly Small Windows*/
 @media (max-width: 200px){
