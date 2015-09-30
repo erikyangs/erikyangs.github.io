@@ -113,10 +113,9 @@ textarea {
 
 #header-container{
     margin: auto;
-    padding: 50px 0px;
+    padding: 60px 0px;
     width: 450px;
     text-align: left;
-    border: 1px solid black;
 }
 
 #erikyang{
@@ -127,7 +126,7 @@ textarea {
 
 #erikyang strong{
     font-family: Gotham-Bold;
-    color: #000C17;
+    color: #001E3E;
 }
 
 #erikyang-subtitle{
