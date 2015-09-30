@@ -106,6 +106,10 @@ textarea {
     src: url(../fonts/Gotham-Thin.ttf);
 }
 
+img{
+        max-width: 100%;
+}
+
 #header{
     height: 200px;
     background-color: #FFFFFF;
