@@ -154,10 +154,10 @@ img{
 
 .navbox{
     display: inline-block;
-    width: 300px;
+    padding: 0px 70px;
     height: 100%;
-    font-family: Gotham-Thin;
-    font-size: 25px;
+    font-family: Gotham-Bold;
+    font-size: 15px;
     line-height: 50px;
     text-align: center;
 
@@ -217,7 +217,7 @@ img{
     height: 50px;
     background-color: #F2023F;
     
-    font-family: Lobster;
+    font-family: Lobster, sans-serif;
     font-size: 30px;
 
     margin-top: 7px;
@@ -230,6 +230,28 @@ img{
     font-family: Gotham-Bold;
 }
 
+h1{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-family: Gotham-Bold;
+    margin: 0;
+}
+
+.white-section, .gray-section{
+    padding: 50px 0px;
+    border-bottom: 1px solid #A5A5A5;
+}
+
+.gray-section{
+    background-color: #ECECEC;
+}
+
+.section-container{
+    margin:auto;
+    max-width: 1200px;
+    padding: 0px 60px;
+}
 
 #construction{
     margin-top: 100px;
