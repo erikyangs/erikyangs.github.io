@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Erik Yang -- <role> -- <twitter>
 
 # THANKS
 
-    <name>
+    Fam
 
 # TECHNOLOGY COLOPHON
 
