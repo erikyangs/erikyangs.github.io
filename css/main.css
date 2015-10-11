@@ -346,6 +346,10 @@ h1{
         background-position: center;
         height: 300px;
     }
+
+    .section-container{
+        padding: 5px 0px;
+    }
 }
 
 /*For Tablets*/
