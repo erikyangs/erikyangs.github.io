@@ -179,20 +179,18 @@ img{
 
 #slider-text-container{
     position: relative;
-    display: block;
+    display: table;
     margin-left: 50%;
     top: 30%;
 
     color: white;
 
     text-align: left;
-
-    width: 430px;
 }
 
 #hello{
     position: relative;
-    display: inline-block;
+    display: block;
 
     text-align: left;
     
@@ -347,6 +345,25 @@ h1{
         height: 300px;
     }
 
+    #slider-text-container{
+        margin-left: 30%;
+    }
+
+    #hello{
+        font-size: 25px;
+        line-height: 40px;
+        height: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #i-love{
+        font-size: 20px;
+        line-height: 30px;
+        height: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .section-container{
         padding: 0px 10px;
     }
@@ -354,12 +371,6 @@ h1{
 
 /*For Tablets*/
 @media (max-width: 1080px) and (min-width: 700px){
-    .navbox{
-        padding: 0px 40px;
-    }
-}
-
-@media (max-width: 1080px){
     #slider-text-container{
         margin-left: 40%;
     }
@@ -380,6 +391,12 @@ h1{
         padding-right: 15px;
     }
 
+    .navbox{
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 1080px){
     .gray-card{
         display:block;
     }
