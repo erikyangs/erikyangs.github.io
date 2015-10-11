@@ -238,7 +238,7 @@ h1{
     margin: 0px 0px 10px 0px;
 }
 
-.white-section, .gray-section{
+.white-section, .gray-section, .darkgray-section{
     padding: 50px 0px;
     border-bottom: 1px solid #A5A5A5;
 }
@@ -247,20 +247,24 @@ h1{
     background-color: #F6F6F6;
 }
 
+.darkgray-section{
+    background-color: #1A1A1A;
+    color: white;
+}
+
 .section-container{
     margin:auto;
     max-width: 1200px;
     padding: 0px 60px;
 }
 
-.gray-rounded{
+.gray-card, .black-card{
     display: inline-block;
     vertical-align:top;
-    width: 300px;
+    width: 250px;
     height: 320px;
     text-align:center;
     font-size: initial;
-
     margin: 8px;
 
     -webkit-border-radius: 5px;
@@ -276,27 +280,26 @@ h1{
     transition: box-shadow 0.1s;
 }
 
-.gray-rounded:hover{
+.gray-card:hover{
     box-shadow: 0px 5px 5px #E6E6E6;  
 }
 
-.gray-rounded img{
+.gray-card img{
     display: block;
     margin:0px auto 20px auto;
     border-bottom: 1px solid #A5A5A5;
 }
 
-
-#construction{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    text-align: center;
+.black-card{
+    background-color:#161616;
+    border: 1px solid #333333;
 }
 
 #footer{
-    background-color: #A52A2A;
+    background-color: #000C17;
     height: 100px;
     color: white;
+    padding: 2z0px;
 }
 
 
@@ -333,6 +336,11 @@ h1{
         width: 300px;
     }
 
+    .navbox{
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+
     #slider{
         background-size: 700px;
         background-position: center;
@@ -341,7 +349,13 @@ h1{
 }
 
 /*For Tablets*/
-@media (max-width: 1000px){
+@media (max-width: 1080px) and (min-width: 700px){
+    .navbox{
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 1080px){
     #slider-text-container{
         margin-left: 40%;
     }
@@ -360,6 +374,10 @@ h1{
         height: 40px;
         padding-left: 15px;
         padding-right: 15px;
+    }
+
+    .gray-card{
+        display:block;
     }
 }
 
