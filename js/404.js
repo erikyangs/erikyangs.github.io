@@ -12,12 +12,12 @@ $(document).ready(function() {
     audioElement.setAttribute('src', 'audio.mp3');
     //audioElement.setAttribute('autoplay', 'autoplay');
     //audioElement.load()
-
-    $.get();
-
+	
+    //$.get();
+	/*
     audioElement.addEventListener("load", function() {
         audioElement.play();
-    }, true);
+    }, true);*/
 
     $('body').click(function() {
         audioElement.play();
