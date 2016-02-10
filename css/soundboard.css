@@ -1,5 +1,11 @@
  #soundboard{
+ 	width: 1500px;
+ 	margin:auto;
  	font-size:0px;
+ }
+
+ .row{
+ 	display:block;
  }
 
  .key{

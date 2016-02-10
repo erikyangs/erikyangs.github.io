@@ -2,7 +2,7 @@ var keyCodes={
 	//alphabet
 	A:65,B:66,C:67,D:68,E:69,F:70,G:71,H:72,I:73,J:74,K:75,L:76,M:77,N:78,O:79,P:80,Q:81,R:82,S:83,T:84,U:85,V:86,W:87,X:88,Y:89,Z:90,
 	//special
-	Semicolon:186
+	Semicolon:186, Comma:188, Period:190, Slash:191
 };
 
 //key is A,S,...
@@ -11,6 +11,12 @@ $(document).on("keydown", function(e){
 	for(var key in keyCodes){
 		if (e.keyCode==keyCodes[key]){
 			$("#key"+key).addClass("keydown");
+			var audioElement = document.createElement('audio');
+    		audioElement.setAttribute('src', 'audio.mp3');
+	    	audioElement.play();
+	        setTimeout(function(){
+	        	audioElement.pause();
+	        }, 300);
 		}
 	}
 });
