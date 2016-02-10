@@ -5,8 +5,7 @@ var keyCodes={
 	Semicolon:186, Comma:188, Period:190, Slash:191
 };
 
-var audioElement = document.createElement('audio');
-audioElement.setAttribute('src', 'audio.mp3');
+
 
 //key is A,S,...
 //keyCodes[key] is 65,83,...
@@ -14,11 +13,9 @@ $(document).on("keydown", function(e){
 	for(var key in keyCodes){
 		if (e.keyCode==keyCodes[key]){
 			$("#key"+key).addClass("keydown");
-			
+			var audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', 'shine.wav');
 	    	audioElement.play();
-	        setTimeout(function(){
-	        	audioElement.pause();
-	        }, 300);
 		}
 	}
 });
