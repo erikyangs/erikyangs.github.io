@@ -28,6 +28,20 @@ $(document).on("keyup", function(e){
 	}
 });
 
+var id;
+$(".key").on("mousedown", function(){
+	$("#" + $(this).attr('id')).addClass("keydown");
+	id = "#" + $(this).attr('id');
+	var audioElement = document.createElement('audio');
+	audioElement.setAttribute('src', 'shine.wav');
+	audioElement.play();
+});
+
+$(document).on("mouseup", function(){
+	$(id).removeClass("keydown");
+});
+
+
 /* Code used to create dictionary of letters
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var str = "";
