@@ -9,7 +9,7 @@ $(document).on("click", function(e) {
 
 $(document).ready(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'audio.mp3');
+    audioElement.setAttribute('src', 'shine.wav');
     //audioElement.setAttribute('autoplay', 'autoplay');
     //audioElement.load()
 	
