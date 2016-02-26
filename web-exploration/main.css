@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.container{
+	height: 100vh;
+	background-color: black;
+	position: relative;
+}
+
+.center {
+	font-family: 'Roboto', sans-serif;
+	font-size: 100px;
+	height: 400px;
+	background-color: yellow;
+	top: 50%;
+	transform: translateY(-50%);
+	position: relative;
+	text-align: center;
+}
