@@ -20,8 +20,8 @@ Html tags
 }
 
 html {
-    color: #222;
-    background-color: #fafafa;
+    color: #222222;
+    background-color: #F2F2F2;
     font-size: 24px;
     font-family: Roboto;
     font-weight: 300;
@@ -46,73 +46,21 @@ a::-moz-selection {
   text-decoration: underline;
 }
 
-h1{
-    display: block;
-    text-align: center;
-    font-size: 40px;
-    font-family: Gotham-Thin;
-    margin: 0px 0px 10px 0px;
-}
-
-h2{
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    letter-spacing: 10px;
-    font-family: Gotham-Bold;
-    margin: 20px 0px 10px 10px;
-    color: #F6F6F6;
-}
-
 hr{
-    margin: 30px 0px 10px 0px;
     border: 1px solid #cccccc;
 }
 
 /* ==========================================================================
-Color Palette
+Site-wide tags
 ============================================================================= */
 
-.darkgray{
-    background-color:#161616;
-    color:#F6F6F6;
-}
-
-.lightgray{
-    background-color: #F6F6F6;
-}
-
-.red{
-    background-color: #D32929; 
-}
-
-.navyblue{
-    background-color: #000C17;
-}
-
-.blue{
-    background-color: #1377FF; 
-}
-
-.red-text{
-    color: #D32929; 
-}
-
-.blue-text{
-    color: #1377FF; 
-}
-
-/* ==========================================================================
-Parts of the site
-=============================================================================*/
 #cover {
-    /*Credit: http://stackoverflow.com/questions/9550760/hide-page-until-everything-is-loaded-advanced*/
     position: fixed; 
     height: 100%; 
     width: 100%; 
     top:0;
     left: 0;
-    background: #fafafa;
+    background: #F2F2F2;
     z-index:9999;
 }
 
@@ -122,113 +70,6 @@ Parts of the site
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
-#center-container{
-    position: absolute;
-    padding: 50px;
-    top: 50%;
-    left: 50%;
-    display: table;
-    transform: translate(-50%, -55%);
-}
-
-#tophalf{
-    display:table;
-}
-
-#profilepic{
-    width: 300px;
-    height: 300px;
-    border-radius:50%;
-    margin-right: 30px;
-    display: inline-block;
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-image: url("../img/ProfilePic.jpg");
-    transition: background-image 1s;
-}
-
-#rightbox{
-    padding-top: 85px;
-    vertical-align:top;
-    display: table-cell;
-}
-
-#erikyang{
-    font-family: Gotham-Thin;
-    font-size:100px;
-    line-height:100px;
-}
-
-#erikyang strong{
-    font-family: Gotham-Bold;
-    color: #001E3E;
-}
-
-#blurb{
-    margin-left: 7px;
-    width: 625px;
-    font-size: 22px;
-}
-
-#blurb span{
-    color:#fafafa;
-}
-
-#blurb span a{
-    text-decoration: underline;
-}
-
-#nav{
-    display:table;
-    margin: auto;
-}
-
-.navbox svg{
-    display: block;
-    width: 90px;
-    margin:auto;
-    fill: currentColor;
-}
-
-.navbox{
-    color:black;
-    text-align:center;
-
-    display: inline-block;
-    margin: 0px 75px;
-
-    font-family: Gotham-Bold;
-    font-size: 20px;
-    text-align: center;
-
-    transition: color 0.2s;
-}
-
-.navbox:hover{
-    cursor:pointer;
-}
-
-#nav a:nth-child(1) .navbox:hover {
-    color: #FF4500;
-}
-
-#nav a:nth-child(2) .navbox:hover {
-    color: #000080;
-}
-
-#nav a:nth-child(3) .navbox:hover {
-    color: #8B0000;
-}
-
-/* ==========================================================================
-RESPONSIVENESS!!!11!1!1!
-============================================================================= */
-/*For Phones*/
-@media (max-width: 700px){
-
-}
-
-/*For Tablets*/
-@media (max-width: 1080px) and (min-width: 700px){
-
+.invisibletext{
+    color: #F2F2F2;
 }

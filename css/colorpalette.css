@@ -1,0 +1,58 @@
+/* ==========================================================================
+Color Palette, for reference
+============================================================================= */
+/*BACKGROUNDS*/
+.whiteback{
+	background-color: white;
+}
+
+.grayback{
+	background-color: #EEEEEE;
+}
+
+.blackback{
+	background-color: #222222;
+	color: #EEEEEE;
+}
+
+/*COLOR*/
+.lightgray{
+	color: #cccccc;   
+}
+
+.gray{
+	color: #EEEEEE;
+}
+
+.black{
+	color: #222222;
+}
+
+.orange{
+	color: #FF4500;
+}
+
+.blue {
+	color: #003e80;
+}
+
+.red {
+	color: #8B0000;
+}
+
+.brightred {
+	color: #FF0018;
+}
+
+/*HOVERS*/
+.orangehover:hover {
+    color: #FF4500;
+}
+
+.bluehover:hover {
+    color: #003e80;
+}
+
+.redhover:hover {
+    color: #8B0000;
+}
