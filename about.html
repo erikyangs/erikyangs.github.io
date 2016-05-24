@@ -39,7 +39,7 @@
 	<!--Stylesheets-->
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/colorpalette.css">
-	<link rel="stylesheet" href="css/about.css">
+	<link rel="stylesheet" href="css/theme.css">
 
 	<title>
 		Erik Yang
@@ -47,49 +47,76 @@
 </head>
 
 <body>
-	<div id = "cover"></div>
+	<!-- <div id = "cover"></div> -->
 	<div id = "header">
 		<div id = "nav">
-			
-			<div id = "erikyang">
-				<a href="index.html">
+			<a href="index.html">
+				<div id = "erikyang">
 					<strong>ERIK</strong>YANG
-				</a>
-			</div>
-			
+				</div>
+			</a>
 			<div class = "navbox orange">
 				<svg class="lnr lnr-star"><use xlink:href="#lnr-star"></use></svg>
 				ABOUT
 			</div>
-			
-			<div class = "navbox bluehover">
-				<a href="projects.html">
+			<a href="projects.html">
+				<div class = "navbox bluehover">
 					<svg class="lnr lnr-briefcase"><use xlink:href="#lnr-briefcase"></use></svg>
 					PROJECTS
-				</a>
-			</div>
-			
-			
-			<div class = "navbox redhover">
-				<a href="contact.html">
+				</div>
+			</a>
+			<a href="contact.html">
+				<div class = "navbox redhover">
 					<svg class="lnr lnr-rocket"><use xlink:href="#lnr-rocket"></use></svg>
 					CONTACT
-				</a>
-			</div>
-			
+				</div>
+			</a>
 		</div>
 	</div>
 	<div id = "content-container">
+		<div class = "section-header blackback white">About Me</div>
 		<div class = "section whiteback">
-			<p>Sample Text in Sample Section</p>
+			<p>
+				<strong>Current Motto: </strong>Do it today, you lazy piece of shit.
+			</p>
+			<p>
+				<strong>Interests: </strong>Dance, Competitive Programming, Slam Poetry, /r/me_irl, Super Smash Bros Melee
+			</p>
 		</div>
-		<div class = "section blackback">
-			<p>Sample Text in Sample Section</p>
+
+		<div class = "section-header blackback white">Current Status</div>
+		<div class = "section whiteback">
+			<p>
+				<strong>Academic: </strong>Computer Science major at UC Berkeley
+			</p>
+			<p>
+				<strong>Work: </strong>Summer internship at Academica Sinica as part of Taiwan Tech Trek
+			</p>
+			<p>
+				<strong>Romantic: </strong>single ¯\_(ツ)_/¯
+			</p>
+		</div>
+
+		<div class = "section-header blackback white">This Website</div>
+		<div class = "section whiteback">
+			<p>
+				This website has changed quite a lot. I still keep the <a href="archive/2016-05/index.html" target="_blank">old version</a> as reference.
+			</p>
+			<p>
+				My philosophy when building this website was to cut out as much fluff as possible, and avoid website cliches (e.g. made with love, Jquery scrolling, cover photo landing page).
+			</p>
+			<p>
+				I coded my website from scratch. No templates, no bootstrap, just plain old-fashioned typing out my own HTML and CSS.
+			</p>
+			<p>
+				<a href="https://github.com/erikyangs/erikyangs.github.io" target="_blank">
+					Repo for this site
+				</a>
+			</p>
 		</div>
 	</div>
 
 	<!--Javascript-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/main.js"></script>
 </body>
 </html>

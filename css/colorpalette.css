@@ -12,10 +12,31 @@ Color Palette, for reference
 
 .blackback{
 	background-color: #222222;
+	color: white;
+}
+
+.orangeback{
+	background-color: #FF4500;
+}
+
+.blueback {
+	background-color: #003e80;
 	color: #EEEEEE;
 }
 
+.redback {
+	background-color: #8B0000;
+}
+
+.brightredback {
+	background-color: #FF0018;
+}
+
 /*COLOR*/
+.white{
+	color: white;
+}
+
 .lightgray{
 	color: #cccccc;   
 }
