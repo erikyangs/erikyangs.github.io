@@ -1,17 +1,60 @@
 /* ==========================================================================
 Page-specific css
 =============================================================================*/
+.project{
+	font-size: 0px;
+}
 
+.project img{
+	width:50%;
+}
+
+.project p:first-of-type{
+	padding-top:15px;
+}
+.project p:last-of-type{
+	margin-bottom: 0px;
+	padding-bottom: 15px;
+}
+
+.project-header{
+	font-family: Gotham-Bold;
+	font-size: 22px;
+	text-transform: uppercase;
+	padding: 20px 10px 10px 10px;
+}
+
+.project-content{
+	display: inline-block;
+	vertical-align: top;
+
+	width: 50%;
+	text-align: center;
+}
+
+.project-content p a:first-child{
+	padding-right: 30px;
+}
 
 /* ==========================================================================
 RESPONSIVENESS!!!11!1!1!
 ============================================================================= */
 /*For Phones*/
 @media (max-width: 700px){
+	.project-header{
+		font-size: 16px;
+		padding: 15px 5px 0px 5px;
+	}
 
+	.project-content p a:first-child{
+		padding-right: 0px;
+	}
+
+	.project-content p{
+		font-size: 20px;
+	}
 }
 
 /*For Tablets*/
 @media (max-width: 1080px) and (min-width: 700px){
-
 }

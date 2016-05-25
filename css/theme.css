@@ -93,10 +93,50 @@ RESPONSIVENESS!!!11!1!1!
 ============================================================================= */
 /*For Phones*/
 @media (max-width: 700px){
+	#erikyang{
+		display: block;
+		font-size: 40px;
+		line-height: 60px;
 
+		margin: 10px 0px 0px 0px;
+
+		text-align: center;
+	}
+	.navbox svg{
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin: 0px auto 8px auto;
+	}
+
+	.navbox{
+		display: inline-block;
+		margin: 0px 8px;
+
+		font-family: Gotham-Bold;
+		font-size: 15px;
+		text-align: center;
+		vertical-align: top;
+
+		transition: color 0.2s, transform 0.2s;
+	}
 }
 
 /*For Tablets*/
 @media (max-width: 1080px) and (min-width: 700px){
+	#erikyang{
+		display: inline-block;
+		font-family: Gotham-Thin;
+		font-size: 60px;
+		line-height: 60px;
 
+		margin-left: 0px;
+		margin-right: 15px;
+		margin-top: 10px;
+	}
+
+	.navbox{
+		margin: 0px 15px;
+		font-size: 15px;
+	}
 }

@@ -53,10 +53,31 @@ RESPONSIVENESS!!!11!1!1!
 ============================================================================= */
 /*For Phones*/
 @media (max-width: 700px){
-
+	.contact-box{
+		width: 150px;
+		height: 150px;
+		font-size: 20px;
+		display: block;
+	}
 }
 
 /*For Tablets*/
 @media (max-width: 1080px) and (min-width: 700px){
+	#contact-container{
+		display: table;
+		height: 150px;
+		margin: auto;
+		font-size: 0px;
+	}
 
+	.contact-box{
+		width: 150px;
+		height: 150px;
+		font-size: 20px;
+	}
+	.contact-box svg{
+		width: 80px;
+		height: 80px;
+		margin: 20px auto 10px auto;
+	}
 }

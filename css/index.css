@@ -7,7 +7,6 @@ hr{
 
 #center-container{
     position: absolute;
-    padding: 50px;
     top: 50%;
     left: 50%;
     display: table;
@@ -91,26 +90,90 @@ hr{
     transform: scale(1.05, 1.05);
 }
 
-#nav a:nth-child(1) .navbox:hover {
-    color: #FF4500;
-}
-
-#nav a:nth-child(2) .navbox:hover {
-    color: #003e80;
-}
-
-#nav a:nth-child(3) .navbox:hover {
-    color: #8B0000;
-}
-
 /* ==========================================================================
 RESPONSIVENESS!!!11!1!1!
 ============================================================================= */
 /*For Phones*/
 @media (max-width: 700px){
+    #center-container{
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        display: table;
+        transform: translate(-50%, 0%);
+    }
+    #tophalf{
+        margin: auto;
+    }
+    #profilepic{
+        margin: auto;
+        display: block;
+        width: 250px;
+        height: 250px;
+    }
+    #rightbox{
+        margin: auto;
+        display: block;
+
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    #erikyang{
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    #blurb{
+        font-size: 15px;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    hr{
+        width: 85%;
+        margin: 20px auto 10px auto;
+    }
+
+    .navbox svg{
+        display: block;
+        width: 50px;
+        height: 70px;
+        margin:auto;
+        fill: currentColor;
+    }
+
+    .navbox{
+        text-align:center;
+
+        display: inline-block;
+        margin: 0px 15px 25px 15px;
+
+        font-family: Gotham-Bold;
+        font-size: 12px;
+        text-align: center;
+
+        transition: color 0.2s, transform 0.2s;
+    }
 }
 
 /*For Tablets*/
 @media (max-width: 1080px) and (min-width: 700px){
+    #tophalf{
+        margin: auto;
+    }
+    #profilepic{
+        margin: auto;
+        display: block;
+    }
+    #rightbox{
+        margin: auto;
+        display: block;
 
+        padding-top: 20px;
+        text-align: center;
+    }
+    .navbox{
+        margin: 0px 40px;
+    }
 }
