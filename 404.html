@@ -122,16 +122,16 @@
             var nocursor = {"cursor":"none"};
             $("body").css(nocursor);
             $("#center-box").empty().html("<div style='width:100px;height:100px;margin:auto;background-size:contain;background-repeat:no-repeat;background-image:url(\"img/crazydancingmouse.gif\")';></div><h2>Mouse and Keyboard have been sabotaged</h2>");
+            $('#background').append("<a href=''><div id='stop' class='btn btn-primary' style='padding:3px 5px;margin:10px;position:absolute;bottom:0;right:0;'>stop this madness</div></a>");
             //disable right click
-            $(document).bind("contextmenu", function (event) {
+            $(document).bind("contextmenu", function(event) {
                 event.preventDefault();
             });
             //disable keyboard
-            $(document).keydown(function (objEvent) {
-                return false
+            $(document).keydown(function(event) {
+                return false;
             });
         });
-
     </script>
 </body>
 </html>
