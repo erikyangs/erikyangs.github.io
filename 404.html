@@ -44,7 +44,6 @@
         }
 
         #background{
-            color: white;
             background-color: #ff7e75;
             background: -moz-linear-gradient(120deg, #ff7e75, #ff9988, #a91f56);
             background: -webkit-linear-gradient(120deg, #ff7e75, #ff9988, #a91f56);
@@ -68,25 +67,32 @@
             box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 45%;
+            left: 48%;
             transform: translate(-50%, -50%);
             display: table;
 
             padding: 20px;
         }
         hr{
-            margin: 5px 0;
+            margin: 10px 0;
         }
         h1{
             font-family: 'Montserrat', sans-serif;
             font-size: 50px;
-            margin: 10px 0px;
+            margin: 3px 0px;
         }
         h2{
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
-            margin: 5px 0px;
+            margin: 3px 0px;
+        }
+        .btn img{
+            height: 30px;
+        }
+        #button-text{
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 
@@ -99,12 +105,33 @@
     <div id="background">
         <div id="center-box">
             <h1>404 Error</h1>
-            <hr>
             <h2>File not found</h2>
+            <hr>
             <p>Sorry, the page you were finding doesn't exist.</p>
-            <p>On the bright side, I made the 404 page an Easter Egg.</p>
+            <p><a href="https://www.github.com/erikyangs">Go to @erikyangs Github profile</a></p>
+            <p>On the bright side, here's an Easter Egg.</p>
+            <div id="easteregg" class="btn btn-primary"><img src="img/easteregg.png" alt=""></img> <div id="button-text">Activate Easter Egg</div></div>
         </div>
     </div>
     <!--Javascript-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $("#easteregg").click(function(){
+            var noselect = {"-webkit-user-select":"none","-moz-user-select":"none","-ms-user-select":"none","user-select":"none"};
+            $("body").css(noselect);
+            var nocursor = {"cursor":"none"};
+            $("body").css(nocursor);
+            $("#center-box").empty().html("<div style='width:100px;height:100px;margin:auto;background-size:contain;background-repeat:no-repeat;background-image:url(\"img/crazydancingmouse.gif\")';></div><h2>Mouse and Keyboard have been sabotaged</h2>");
+            //disable right click
+            $(document).bind("contextmenu", function (event) {
+                event.preventDefault();
+            });
+            //disable keyboard
+            $(document).keydown(function (objEvent) {
+                return false
+            });
+        });
+
+    </script>
 </body>
 </html>
