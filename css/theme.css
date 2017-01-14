@@ -191,6 +191,12 @@ h3{
 	height: 100%;
 }
 
+@media (max-width: 768px) {
+	#landing-decoration{
+		display: none;
+	}
+}
+
 #projects .row{
 	margin-bottom: 15px;
 }
