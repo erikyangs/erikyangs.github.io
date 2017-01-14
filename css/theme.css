@@ -160,21 +160,28 @@ h3{
 #landing-container{
 	position: absolute;
 	top: 30%;
+	left: 35%;
+	transform: translate(-50%, 0%);
+}
 
-	width:100%;
+@media (max-width: 768px) {
+	#landing-container{
+		left: 10%;
+		transform: none;
+	}
 }
 
 #landing-title{
 	font-family: 'Montserrat', sans-serif;
-	font-size: 50px;
+	font-size: 60px;
 	font-weight:700;
 
 	margin-left: -3px;
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 }
 
 #landing-subtitle{
-	font-size: 20px;
+	font-size: 18px;
 }
 
 #landing-decoration{
