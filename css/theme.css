@@ -1,142 +1,280 @@
-/* ==========================================================================
-Page-specific css
-=============================================================================*/
-#header{
-	display: block;
-	background-color: white;
+/*
+tag{
+	color/border
+	font
+	effects
+	positioning/display
+	width/height
+	padding/margin
+	transition/animation
+}
+*/
+
+/*====Imported Fonts====*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700');
+
+/*====Theme HTML Elements====*/
+body{
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
 }
 
-#nav{
-	display:table;
-	margin: auto;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+a{
+	text-decoration: none;
+	color: initial;
 }
 
-#nav a{
+a:hover, a:visited, a:active, a:focus{
 	text-decoration: none;
 }
 
-#erikyang{
-	display: inline-block;
-	font-family: Gotham-Thin;
-	font-size: 60px;
-	line-height: 60px;
+nav{
+	background-color: white;
+	border-bottom: 1px #DDD solid;
 
-	margin-left: 10px;
-	margin-right: 25px;
-	margin-top: 10px;
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+
+    width: 100%;
+	height: 60px;
 }
 
-#erikyang strong{
-	font-family: Gotham-Bold;
-	color: #003E80;
-}
+nav ul{
+	list-style-type:none;
 
-.navbox svg{
-	display: block;
-	width: 40px;
-	height: 40px;
-	margin: 8px auto;
-	fill: currentColor;
-}
-
-.navbox{
-	display: inline-block;
-	margin: 0px 40px;
-
-	font-family: Gotham-Bold;
-	font-size: 15px;
-	text-align: center;
+	float: right;
 	vertical-align: top;
+	display: table;
 
-	transition: color 0.2s, transform 0.2s;
+	height: 100%;
+
+	margin: 0px 50px;
+	padding: 0;
 }
 
-.navbox:hover{
-	cursor:pointer;
-	transform: scale(1.05, 1.05);
+nav ul li{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+
+	display: table-cell;
+	vertical-align: middle;
+	height: 60px;
+
+	padding: 0px 30px;
+
+	transition: all 0.2s;
 }
 
-#content-container{
+nav ul li:hover{
+	color: #555;
+}
+
+@media (max-width: 480px) {
+	nav ul li{
+		display: none;
+	}
+}
+
+h1{
+	font-family:'Montserrat', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+
+	margin: 10px 0px;
+}
+
+h2{
+	font-family:'Lato', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+
+	margin: 5px 0px;
+}
+
+h3{
+	font-family:'Montserrat', sans-serif;
+	font-size:16px;
+	font-weight: 700;
+
+	margin: 3px 0px;
+}
+
+/*====Theme-Specific Elements====*/
+.center-container{
+	display: table;
 	margin: auto;
-	max-width: 900px;
 }
 
-.section{
+.centercenter-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: table;
+    transform: translate(-50%, -50%);
+}
+
+.padding-top-sm{
+	padding-top: 30px;
+}
+
+#brand{
+	border-right: 1px #DDD solid;
+
+	height: 100%;
+	
+	padding: 8px;
+}
+
+#landing{
+	color: white;
+    background-color: #ff7e75;
+    background: -moz-linear-gradient(120deg, #ff7e75, #ff9988, #a91f56);
+    background: -webkit-linear-gradient(120deg, #ff7e75, #ff9988, #a91f56);
+    background: linear-gradient(120deg, #ff7e75, #ff9988, #a91f56);
+
+ 	overflow: hidden;
+    position:relative;
+
+    height: 75vh;
+    width: 100%;
+
+    margin-top: 60px;
+}
+
+#particles-js{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+#landing-container{
+	position: absolute;
+	top: 30%;
+
+	width:100%;
+}
+
+#landing-title{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	font-weight:700;
+
+	margin-left: -3px;
+	margin-bottom: 5px;
+}
+
+#landing-subtitle{
+	font-size: 20px;
+}
+
+#landing-decoration{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	position: absolute;
+	top: 0;
+	left: 65%;
+	transform: translate(-50%, 0%);
+
+	height: 100%;
+}
+
+#projects .row{
+	margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+	#projects .row{
+		margin-bottom: 0px;
+	}
+}
+
+.project-container:nth-child(2){
+	padding: 0px 0px;
+}
+
+@media (max-width: 768px) {
+	.project-container:nth-child(2){
+		padding: 0px 15px;
+	}
+}
+
+.project{
+	border: 1px #DDD solid;
+
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+
+    padding: 5px 10px;
+
+    transition: all 0.1s;
+}
+
+@media (max-width: 768px) {
+	.project{
+		margin-bottom: 10px;
+	}
+}
+
+.project:hover{
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project span{
 	display: block;
-	margin-bottom: 20px;
+	margin-top: 5px;
 }
 
-.section p{
-	font-size: 22px;
-	margin-bottom: 20px;
-	padding: 0px 15px;
-}
-.section p:first-child{
-	padding-top:15px;
-}
-.section p:last-child{
-	margin-bottom: 0px;
-	padding-bottom: 15px;
-}
+.button{
+	font-family:'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
 
-.section-header{
-	font-family: Gotham-Bold;
-	font-size: 25px;
-	padding: 10px 15px;
-	text-transform: uppercase;
-}
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
-/* ==========================================================================
-RESPONSIVENESS!!!11!1!1!
-============================================================================= */
-/*For Phones*/
-@media (max-width: 700px){
-	#erikyang{
-		display: block;
-		font-size: 40px;
-		line-height: 60px;
+	display: inline-block;
 
-		margin: 10px 0px 0px 0px;
+	padding: 5px 10px;
+	margin: 0px 5px;
 
-		text-align: center;
-	}
-	.navbox svg{
-		display: block;
-		width: 40px;
-		height: 40px;
-		margin: 0px auto 8px auto;
-	}
-
-	.navbox{
-		display: inline-block;
-		margin: 0px 8px;
-
-		font-family: Gotham-Bold;
-		font-size: 15px;
-		text-align: center;
-		vertical-align: top;
-
-		transition: color 0.2s, transform 0.2s;
-	}
+	transition: all 0.3s;
 }
 
-/*For Tablets*/
-@media (max-width: 1080px) and (min-width: 700px){
-	#erikyang{
-		display: inline-block;
-		font-family: Gotham-Thin;
-		font-size: 60px;
-		line-height: 60px;
+.button:hover{
+	background-color: #DDD;
 
-		margin-left: 0px;
-		margin-right: 15px;
-		margin-top: 10px;
-	}
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-	.navbox{
-		margin: 0px 15px;
-		font-size: 15px;
-	}
+.button:active{
+	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.center-container .button{
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
