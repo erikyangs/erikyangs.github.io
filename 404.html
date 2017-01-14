@@ -68,7 +68,7 @@
 
             position: absolute;
             top: 45%;
-            left: 48%;
+            left: 50%;
             transform: translate(-50%, -50%);
             display: table;
 
@@ -94,6 +94,11 @@
             display: inline-block;
             vertical-align: middle;
         }
+        @media (max-width: 768px) {
+            .hide-in-mobile{
+                display: none;
+            }
+        }
     </style>
 
     <title>
@@ -109,8 +114,8 @@
             <hr>
             <p>Sorry, the page you were finding doesn't exist.</p>
             <p><a href="https://www.github.com/erikyangs">Go to @erikyangs Github profile</a></p>
-            <p>On the bright side, here's an Easter Egg.</p>
-            <div id="easteregg" class="btn btn-primary"><img src="https://erikyangs.github.io/img/easteregg.png" alt=""></img> <div id="button-text">Activate Easter Egg</div></div>
+            <p class="hide-in-mobile">On the bright side, here's an Easter Egg.</p>
+            <div id="easteregg" class="btn btn-primary hide-in-mobile"><img src="https://erikyangs.github.io/img/easteregg.png" alt=""></img> <div id="button-text">Activate Easter Egg</div></div>
         </div>
     </div>
     <!--Javascript-->
