@@ -15,6 +15,7 @@ $(document).ready(function(){
 	  });
 	};
 
+	//menu animations + logic
 	var isMenuDown = false;
 	function menuDown(){
 		$('#menu-chevron').animateRotate(0, -180, 100);
@@ -41,6 +42,22 @@ $(document).ready(function(){
 	$("nav a").click(function(){
 		menuUp();
 	});
+
+	//animated scrolling
+    //select all a with href containing # but not just "#"
+    $('a[href*="#"]:not([href="#"])').click(function(e) {
+        e.preventDefault();
+        //section = #projects, #contact, etc.
+        var section = $(this).attr("href");
+        var navHeight = $("nav").height();
+        //use scroll difference to calculate animation time
+        var scrollDifference = Math.abs($(section).offset().top - navHeight - $(window).scrollTop());
+        var animationTime = scrollDifference/$(document).height()*1000*1.5;
+        //animation
+        $("html, body").animate({
+            scrollTop: $(section).offset().top - navHeight
+        }, animationTime);
+    });
 
 	//====PARTICLES====
 	particlesJS.load('particles-js', 'js/particles.json', function() {
