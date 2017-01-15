@@ -83,19 +83,27 @@ $(document).ready(function(){
 	//HTML-appending code
 	function addProjects(data){
 		var projectHTML = "";
-
+		var i = 0;
 		for (var index in data){
 			repo = data[index];
+			if(!repo.description){
+				continue;
+			}
 			console.log("Adding: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
 			//row end/start
-			if(index%3==0){
-				if(index!=0){
+			if(i%3==0){
+				if(i!=0){
 					projectHTML += "</div>"
 				}
 				projectHTML += "<div class=row>";
 			}
 			//add project
-			projectHTML += projectHTML_1 + "<h3>" + repo.name + "</h3>" + "<span>" + repo.description + "</span>";
+			if(repo.name){
+				projectHTML += projectHTML_1 + "<h3>" + repo.name + "</h3>";
+			}
+			if(repo.description){
+				projectHTML += "<span>" + repo.description + "</span>";
+			}
 			projectHTML += projectHTML_2;
 			if(repo.html_url){
 				projectHTML += "<a href = " + repo.html_url + " target='_blank'>" + projectHTML_3 +"</a>";
@@ -104,6 +112,7 @@ $(document).ready(function(){
 				projectHTML += "<a href = " + repo.homepage + " target='_blank'>" + projectHTML_4 +"</a>";
 			}
 			projectHTML+=projectHTML_5;
+			i++;
 		}
 		//row end
 		projectHTML+="</div>"
