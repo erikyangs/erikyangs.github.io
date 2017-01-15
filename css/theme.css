@@ -11,7 +11,7 @@ tag{
 */
 
 /*====Imported Fonts====*/
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,700');
 
 /*====Theme HTML Elements====*/
 body{
@@ -20,18 +20,16 @@ body{
 	font-weight: 400;
 }
 
-a{
+a, a:hover, a:visited, a:active, a:focus{
 	text-decoration: none;
 	color: initial;
-}
-
-a:hover, a:visited, a:active, a:focus{
-	text-decoration: none;
 }
 
 nav{
 	background-color: white;
 	border-bottom: 1px #DDD solid;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
 
 	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
@@ -59,9 +57,8 @@ nav ul{
 	padding: 0;
 }
 
-nav ul li{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 14px;
+nav li{
+	cursor: pointer;
 
 	display: table-cell;
 	vertical-align: middle;
@@ -72,13 +69,82 @@ nav ul li{
 	transition: all 0.2s;
 }
 
-nav ul li:hover{
+nav li:hover{
 	color: #555;
 }
 
+#mobile-menu-icon{
+	display: none;
+}
+
+#mobile-menu-heading{
+	font-family:'Montserrat', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.mobile-only{
+	display:none;
+}
+
 @media (max-width: 480px) {
+	.mobile-only{
+		display: inherit;
+	}
+
+	nav ul{
+		background-color: white;
+
+		position:absolute;
+		top:-100vh;
+		right:0;
+
+		display: block;
+
+		width: 100%;
+		height: 100vh;
+
+		margin: 0px;
+		padding-top: 80px;
+	}
+
 	nav ul li{
-		display: none;
+		border: ;
+		font-family:'Lato';
+		font-size: 20px;
+		font-weight:300;
+
+		display: block;
+		height: initial;
+		margin-bottom: 20px;
+	}
+
+	nav ul li:hover{
+		color: #008489;
+	}
+
+	#mobile-menu-icon{
+		list-style-type:none;
+
+		position:relative;
+		z-index: 9;
+		float: right;
+		vertical-align: top;
+		display: table;
+	}
+
+	#mobile-menu-icon span{
+		display: inline-block;
+	}
+
+	#menu-chevron{
+		font-size: 8px;
+
+		display: inline-block;
+		vertical-align: middle;
+
+		margin-left: 5px;
+		margin-bottom: 2px;
 	}
 }
 
@@ -168,6 +234,14 @@ h3{
 	#landing-container{
 		left: 10%;
 		transform: none;
+	}
+}
+@media (max-width: 480px) {
+	#landing-container{
+		left: 0%;
+		transform: none;
+
+		margin: 0px 15px;
 	}
 }
 

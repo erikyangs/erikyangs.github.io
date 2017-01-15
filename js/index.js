@@ -1,4 +1,47 @@
 $(document).ready(function(){
+	//====NAVBAR====
+	//animate rotate from http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate
+	$.fn.animateRotate = function(startAngle, angle, duration, easing, complete) {
+	  var args = $.speed(duration, easing, complete);
+	  var step = args.step;
+	  return this.each(function(i, e) {
+	    args.complete = $.proxy(args.complete, e);
+	    args.step = function(now) {
+	      $.style(e, 'transform', 'rotate(' + now + 'deg)');
+	      if (step) return step.apply(e, arguments);
+	    };
+
+	    $({deg: startAngle}).animate({deg: angle}, args);
+	  });
+	};
+
+	var isMenuDown = false;
+	function menuDown(){
+		$('#menu-chevron').animateRotate(0, -180, 100);
+		$('nav ul').animate({
+			top:'0vh'
+		}, 400);
+		isMenuDown = true;
+	}
+	function menuUp(){
+		$('#menu-chevron').animateRotate(-180, 0, 200);
+		$('nav ul').animate({
+			top:'-100vh'
+		}, 400);
+		isMenuDown = false;
+	}
+	$("#mobile-menu-icon").click(function(){
+		if(isMenuDown){
+			menuUp();
+		}
+		else{
+			menuDown();
+		}	
+	});
+	$("nav a").click(function(){
+		menuUp();
+	});
+
 	//====PARTICLES====
 	particlesJS.load('particles-js', 'js/particles.json', function() {
 	  console.log('callback - particles.js config loaded');
@@ -13,7 +56,7 @@ $(document).ready(function(){
 		var projectHTML_1 = "<div class='col-sm-4 project-container'><div class=project>"
 		//"<h3>Project 1</h3>"
 		//"<span>Description would go here</span>"
-		var projectHTML_2 = "<div class=center-container>";
+		var projectHTML_2 = "<div class='center-container text-center'>";
 		//add links
 		var projectHTML_3 = "<div class=button>Source Code</div>";
 		var projectHTML_3B = "<div class='button-disabled'>Source Code</div>";

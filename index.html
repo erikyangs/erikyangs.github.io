@@ -30,6 +30,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--Icons-->
+    <script src="https://use.fontawesome.com/cbf9554986.js"></script>
 
     <!--Fonts-->
 
@@ -44,8 +45,10 @@
 
 <!-- 
 TODO:
+responsive nav bar
 subtitle js
 project images
+project code github pull cleanup
 regular projects
 about section
 contact
@@ -54,8 +57,11 @@ footer
 <body>
     <nav>
         <a href=""><img id="brand" src="img/brand.jpg"></img></a>
+        <div id="mobile-menu-icon"><li><span>Navigation</span><i id="menu-chevron" class="fa fa-chevron-down"></i></li></div>
         <ul>
-            <!-- <a href="#about"><li>About</li></a> -->
+            <li class="mobile-only" id="mobile-menu-heading">Site Outline</li>
+            <a class="mobile-only" href=""><li>Home</li></a>
+            <a href="#about"><li>About</li></a>
             <a href="#projects"><li>Projects</li></a>
         </ul>
     </nav>
@@ -83,7 +89,7 @@ footer
                 <div class="project">
                     <h3>Project 1</h3>
                     <span>Description would go here Description would go here Description would go here Description would go here Description would go here Description would go here Description would go here</span>
-                    <div class="center-container">
+                    <div class="center-container text-center">
                         <a><div class="button">Source Code</div></a>
                         <a><div class="button">View Project</div></a>
                     </div>
