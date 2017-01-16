@@ -69,27 +69,24 @@ $(document).ready(function(){
 	var username = "erikyangs";
 	var githubAPIURL = "https://api.github.com/users/";
 	var githubRepoURL = githubAPIURL + username + "/repos";
-	//HTML to enter; TODO: pull from another page to add
-		var projectHTML_1 = "<div class='col-sm-4 project-container'><div class=project>"
-		//"<h3>Project 1</h3>"
-		//"<span>Description would go here</span>"
-		var projectHTML_2 = "<div class='center-container text-center'>";
-		//add links
-		var projectHTML_3 = "<div class=button>Source Code</div>";
-		var projectHTML_3B = "<div class='button-disabled'>Source Code</div>";
-		var projectHTML_4 = "<div class=button>View Project</div>";
-		var projectHTML_4B = "<div class='button-disabled'>View Project</div>";
-		var projectHTML_5 = "</div></div></div>";
+	var projectHTMLURL = "https://erikyangs.github.io/views/project.json";
+
 	//HTML-appending code
-	function addProjects(data){
+	String.prototype.replaceBracketsWith = function (textToInsert){
+		return this.replace("{}", textToInsert);
+	}
+	function addProjects(data, projectHTMLTemplate){
 		var projectHTML = "";
-		var i = 0;
+		var i = 0;	
+
 		for (var index in data){
 			repo = data[index];
-			if(!repo.description){
+			if(!repo.name || !repo.description){
+				console.log("Skipping repo: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
 				continue;
 			}
-			console.log("Adding: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
+			console.log("Adding repo: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
+			
 			//row end/start
 			if(i%3==0){
 				if(i!=0){
@@ -97,21 +94,23 @@ $(document).ready(function(){
 				}
 				projectHTML += "<div class=row>";
 			}
+			
 			//add project
 			if(repo.name){
-				projectHTML += projectHTML_1 + "<h3>" + repo.name + "</h3>";
+				projectHTML += projectHTMLTemplate[0] + projectHTMLTemplate[1].replaceBracketsWith(repo.name);
 			}
 			if(repo.description){
-				projectHTML += "<span>" + repo.description + "</span>";
+				projectHTML += projectHTMLTemplate[2].replaceBracketsWith(repo.description);
 			}
-			projectHTML += projectHTML_2;
+			projectHTML += projectHTMLTemplate[3];
 			if(repo.html_url){
-				projectHTML += "<a href = " + repo.html_url + " target='_blank'>" + projectHTML_3 +"</a>";
+				projectHTML += projectHTMLTemplate[4].replaceBracketsWith(repo.html_url);
 			}
 			if(repo.homepage){
-				projectHTML += "<a href = " + repo.homepage + " target='_blank'>" + projectHTML_4 +"</a>";
+				projectHTML += projectHTMLTemplate[5].replaceBracketsWith(repo.homepage);
 			}
-			projectHTML+=projectHTML_5;
+			projectHTML+=projectHTMLTemplate[6];
+
 			i++;
 		}
 		//row end
@@ -119,21 +118,49 @@ $(document).ready(function(){
 
 		$("#projects").append(projectHTML);
 	}
+
 	//homemade web scraper
-	$.get(githubRepoURL)
-		.done(function(data){
-			//check if get works
-			if(data && data!=null && data instanceof Array){
-				console.log("Github Repo List loaded from " + githubRepoURL);
-				addProjects(data);
-			}
-			else{
-				console.error("Data was null or not expected format. Failed to load repos from: " + githubRepoURL);
-				$("#github-projects-header").remove();
-			}
-		})
-		.fail(function(jqHXR, textStatus, errorThrown){
-			console.error("Error with using get from: " + githubRepoURL + " from error " + errorThrown);
-			$("#github-projects-header").remove();
-		});
+	function getfromURL(URL, success=function(){}, fail=function(){}, dataType=String){
+		$.get(URL)
+			.done(function(data){
+				//check if get works
+				if(data && data!=null && data instanceof dataType){
+					console.log("Data loaded from " + URL);
+					success(data);
+				}
+				else{
+					console.error("Data was null or not expected format " + dataType + ". Failed to load from: " + URL);
+					fail();
+				}
+			})
+			.fail(function(jqHXR, textStatus, errorThrown){
+				console.error("Error with using get from: " + URL + " from error " + errorThrown);
+				fail();
+			});
+	}
+	
+	//gets repo data from Github API
+	function getGithubRepoData(projectHTML){
+		//if success, add projects, if not, remove header
+		getfromURL(githubRepoURL,
+			function(repoData) {
+		        addProjects(repoData, projectHTML);
+		    },
+		    function() {
+		        $("#github-projects-header").remove();
+		    },
+		    Array
+		    );
+	}
+	//gets HTML template from personal views/projects.json
+	getfromURL(projectHTMLURL, 
+		function(projectHTML){
+			getGithubRepoData(projectHTML);
+		},
+		function() {
+	        $("#github-projects-header").remove();
+	    },
+	    Array
+	    );
+
 });
