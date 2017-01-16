@@ -1,15 +1,3 @@
 [
-    "<div class='col-sm-4 project-container'>
-        <div class=project>",
-            "<h3>{}</h3>","<span>{}</span>",
-            "<div class='center-container text-center'>",
-                "<a href='{}' target='_blank'>
-                    <div class=button>Source Code</div>
-                </a>",
-                "<a href='{}' target='_blank'>
-                    <div class=button>View Project</div>
-                </a>",
-            "</div>
-        </div>
-    </div>"
+
 ]
