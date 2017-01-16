@@ -70,12 +70,13 @@ $(document).ready(function(){
     var githubAPIURL = "https://api.github.com/users/";
     var githubRepoURL = githubAPIURL + username + "/repos";
     var projectHTMLURL = "https://erikyangs.github.io/views/projectHTMLTemplate.json";
+    var otherProjectURL = "https://erikyangs.github.io/js/otherprojects.json";
 
     //HTML-appending code
     String.prototype.replaceBracketsWith = function (textToInsert){
         return this.replace("{}", textToInsert);
     }
-    function addProjects(data, projectHTMLTemplate){
+    function convertProjectToHTML(data, projectHTMLTemplate){
         var projectHTML = "";
         var i = 0;  
 
@@ -116,7 +117,7 @@ $(document).ready(function(){
         //row end
         projectHTML+="</div>"
 
-        $("#github-projects-header").after(projectHTML);
+        return projectHTML;
     }
 
     //homemade web scraper
@@ -144,10 +145,23 @@ $(document).ready(function(){
         //if success, add projects, if not, remove header
         getfromURL(githubRepoURL,
             function(repoData) {
-                addProjects(repoData, projectHTML);
+                $("#github-projects-header").after(convertProjectToHTML(repoData, projectHTML));
             },
             function() {
                 $("#github-projects-header").remove();
+            },
+            Array
+            );
+    }
+    //gets repo data from personal json
+    function getOtherProjectData(projectHTML){
+        //if success, add projects, if not, remove header
+        getfromURL(otherProjectURL,
+            function(projectData) {
+                $("#other-projects-header").after(convertProjectToHTML(projectData, projectHTML));
+            },
+            function() {
+                $("#other-projects-header").remove();
             },
             Array
             );
@@ -156,9 +170,12 @@ $(document).ready(function(){
     getfromURL(projectHTMLURL, 
         function(projectHTML){
             getGithubRepoData(projectHTML);
+            getOtherProjectData(projectHTML);
         },
         function() {
-            $("#github-projects-header").remove();
+            //if you can't get projectHTMLTemplate, then just link them to your Github
+            $("#projects").empty();
+            $("#projects").append("<h1>Projects</h1><h2>Check out my <a href='https://www.github.com/erikyangs' target='_blank'>projects on Github:</a></h2>");
         },
         Array
         );
