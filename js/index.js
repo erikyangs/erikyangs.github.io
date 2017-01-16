@@ -174,8 +174,8 @@ $(document).ready(function(){
         },
         function() {
             //if you can't get projectHTMLTemplate, then just link them to your Github
-            $("#projects").empty();
-            $("#projects").append("<h1>Projects</h1><h2>Check out my <a href='https://www.github.com/erikyangs' target='_blank'>projects on Github:</a></h2>");
+            $("#projects h1").nextAll().empty();
+            $("#projects").append("<h2>Check out my <a href='https://www.github.com/erikyangs' target='_blank'>projects on Github:</a></h2>");
         },
         Array
         );
