@@ -69,7 +69,7 @@ $(document).ready(function(){
     var username = "erikyangs";
     var githubAPIURL = "https://api.github.com/users/";
     var githubRepoURL = githubAPIURL + username + "/repos";
-    var projectHTMLURL = "https://erikyangs.github.io/views/project.json";
+    var projectHTMLURL = "https://erikyangs.github.io/views/projectHTMLTemplate.json";
 
     //HTML-appending code
     String.prototype.replaceBracketsWith = function (textToInsert){
@@ -116,7 +116,7 @@ $(document).ready(function(){
         //row end
         projectHTML+="</div>"
 
-        $("#projects").append(projectHTML);
+        $("#github-projects-header").after(projectHTML);
     }
 
     //homemade web scraper

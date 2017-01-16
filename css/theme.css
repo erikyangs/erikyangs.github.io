@@ -22,7 +22,12 @@ body{
 
 a, a:hover, a:visited, a:active, a:focus{
 	text-decoration: none;
-	color: initial;
+	color: #777;
+	transition: color 0.2s;
+}
+
+a:hover{
+	color: #008489;
 }
 
 nav{
@@ -58,6 +63,8 @@ nav ul{
 }
 
 nav li{
+	color: #333;
+
 	cursor: pointer;
 
 	display: table-cell;
@@ -331,6 +338,7 @@ h3{
 }
 
 .button{
+	color: #333;	
 	font-family:'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
@@ -351,6 +359,7 @@ h3{
 }
 
 .button:hover{
+	color: #333;
 	background-color: #DDD;
 
 	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
