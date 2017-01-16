@@ -1,6 +1,6 @@
 [
 	{
-		"name" : "1",
-		"description" : "descript1"
+		"name" : "BearMaps",
+		"description" : "Web application that rasterizes map images and routes directions between points using A* path-finding"
 	}
 ]
