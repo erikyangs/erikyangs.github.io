@@ -116,7 +116,7 @@ $(document).ready(function(){
         }
         //row end
         projectHTML+="</div>"
-        console.log(projectHTML);
+        // console.log(projectHTML);
         return projectHTML;
     }
 

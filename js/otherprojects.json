@@ -2,5 +2,10 @@
 	{
 		"name" : "BearMaps",
 		"description" : "Web application that rasterizes map images and routes directions between points using A* path-finding. Code available upon request."
+	},
+	{
+		"img_url" : "https://erikyangs.github.io/img/FZCF.jpg",
+		"name" : "FengZheng Cultural Foundation Website",
+		"description" : "Website designed for charity organization in Texas promoting education equality."
 	}
 ]
