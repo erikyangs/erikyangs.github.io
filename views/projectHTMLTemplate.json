@@ -1,5 +1,6 @@
 [
     "<div class='col-sm-4 project-container'><div class=project>",
+    	"<img src='{}'></img>",
     	"<div class=project-content>",
             "<h3>{}</h3>",
             "<span>{}</span>",

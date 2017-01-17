@@ -99,23 +99,23 @@ $(document).ready(function(){
             //add project
             projectHTML += projectHTMLTemplate[0];
             if(repo.img_url){
-                projectHTML += "<img src='https://erikyangs.github.io/img/FZCF.jpg' width='100%'></img>";
+                projectHTML += projectHTMLTemplate[1].replaceBracketsWith(repo.img_url);
             }
-            projectHTML += projectHTMLTemplate[1];
+            projectHTML += projectHTMLTemplate[2];
             if(repo.name){
-                projectHTML += projectHTMLTemplate[2].replaceBracketsWith(repo.name);
+                projectHTML += projectHTMLTemplate[3].replaceBracketsWith(repo.name);
             }
             if(repo.description){
-                projectHTML += projectHTMLTemplate[3].replaceBracketsWith(repo.description);
+                projectHTML += projectHTMLTemplate[4].replaceBracketsWith(repo.description);
             }
-            projectHTML += projectHTMLTemplate[4];
+            projectHTML += projectHTMLTemplate[5];
             if(repo.html_url){
-                projectHTML += projectHTMLTemplate[5].replaceBracketsWith(repo.html_url);
+                projectHTML += projectHTMLTemplate[6].replaceBracketsWith(repo.html_url);
             }
             if(repo.homepage){
-                projectHTML += projectHTMLTemplate[6].replaceBracketsWith(repo.homepage);
+                projectHTML += projectHTMLTemplate[7].replaceBracketsWith(repo.homepage);
             }
-            projectHTML+=projectHTMLTemplate[7];
+            projectHTML+=projectHTMLTemplate[8];
 
             i++;
         }
