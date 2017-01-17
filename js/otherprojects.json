@@ -6,6 +6,8 @@
 	{
 		"img_url" : "img/projects/FZCF.jpg",
 		"name" : "FengZheng Cultural Foundation Website",
-		"description" : "Website designed for charity organization in Texas promoting education equality."
+		"description" : "Website designed for charity organization in Texas promoting education equality.",
+		"html_url": "https://github.com/fzcf/fzcf.github.io",
+		"homepage": "http://fzculturalfoundation.org/index.html"
 	}
 ]
