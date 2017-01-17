@@ -315,8 +315,6 @@ h3{
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 
-    padding: 5px 10px;
-
     transition: all 0.1s;
 }
 
@@ -330,6 +328,10 @@ h3{
 	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-content{
+	padding: 5px 10px;
 }
 
 .project span{
