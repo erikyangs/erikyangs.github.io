@@ -88,7 +88,7 @@ app.controller("projects-controller", function($scope, $http){
     $scope.otherprojects = [
         {
             "img_url" : "img/projects/EOP.jpg",
-            "name" : "UC Berkeley Education Opportunity Program",
+            "name" : "UC Berkeley Educational Opportunity Program",
             "description" : "Website designed for UC Berkeley's Educational Opportunity Program, which provides first generation and low-income students with guidance and resources.",
             "html_url": "",
             "homepage": "http://eop.berkeley.edu/",
