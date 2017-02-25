@@ -120,8 +120,8 @@ regular projects content
                             <h3>{{project.name}}</h3>
                             <span>{{project.description}}</span>
                             <div ng-if="project.html_url || project.homepage" class="center-container text-center">
-                                <a ng-href="{{project.html_url}}" target="_blank"><div class=button>Source Code</div></a>
-                                <a ng-href="{{project.homepage}}" target="_blank"><div class=button>View Project</div></a>
+                                <a ng-if="project.html_url" ng-href="{{project.html_url}}" target="_blank"><div class=button>Source Code</div></a>
+                                <a ng-if="project.homepage" ng-href="{{project.homepage}}" target="_blank"><div class=button>View Project</div></a>
                             </div>
                         </div>
                     </div>
