@@ -63,126 +63,54 @@ $(document).ready(function(){
     particlesJS.load('particles-js', 'https://erikyangs.github.io/js/particles.json', function() {
       console.log('callback - particles.js config loaded');
     });
+});
 
-    //====PROJECTS====
-    //constants
-    var username = "erikyangs";
-    var githubAPIURL = "https://api.github.com/users/";
-    var githubRepoURL = githubAPIURL + username + "/repos";
-    var projectHTMLURL = "https://erikyangs.github.io/views/projectHTMLTemplate.json";
-    var otherProjectURL = "https://erikyangs.github.io/js/otherprojects.json";
+//====PROJECTS====
+//constants
+var username = "erikyangs";
+var githubAPIURL = "https://api.github.com/users/";
+var githubRepoURL = githubAPIURL + username + "/repos";
 
-    //HTML-appending code
-    String.prototype.replaceBracketsWith = function (textToInsert){
-        return this.replace("{}", textToInsert);
-    }
-    function convertProjectToHTML(data, projectHTMLTemplate){
-        var projectHTML = "";
-        var i = 0;  
-
-        for (var index in data){
-            repo = data[index];
-            if(!repo.name || !repo.description){
-                console.log("Skipping repo: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
-                continue;
+var app = angular.module("projects-app",[]);
+app.controller("projects-controller", function($scope, $http){
+    $http.get(githubRepoURL)
+    .then(function(response){
+        var projects = [];
+        for(var i = 0;i<response.data.length;i++){
+            var project = response.data[i];
+            if (project.name && project.description){
+                projects.push(project);
             }
-            console.log("Adding repo: " + repo.name + ": " + repo.description + "\n with repo URL:" + repo.html_url + "\n and HTML URL: " + repo.homepage);
-            
-            //row end/start
-            if(i%3==0){
-                if(i!=0){
-                    projectHTML += "</div>"
-                }
-                projectHTML += "<div class=row>";
-            }
-            
-            //add project
-            projectHTML += projectHTMLTemplate[0];
-            if(repo.img_url){
-                projectHTML += projectHTMLTemplate[1].replaceBracketsWith(repo.img_url);
-            }
-            projectHTML += projectHTMLTemplate[2];
-            if(repo.name){
-                projectHTML += projectHTMLTemplate[3].replaceBracketsWith(repo.name);
-            }
-            if(repo.description){
-                projectHTML += projectHTMLTemplate[4].replaceBracketsWith(repo.description);
-            }
-            projectHTML += projectHTMLTemplate[5];
-            if(repo.html_url){
-                projectHTML += projectHTMLTemplate[6].replaceBracketsWith(repo.html_url);
-            }
-            if(repo.homepage){
-                projectHTML += projectHTMLTemplate[7].replaceBracketsWith(repo.homepage);
-            }
-            projectHTML+=projectHTMLTemplate[8];
-
-            i++;
         }
-        //row end
-        projectHTML+="</div>"
-        // console.log(projectHTML);
-        return projectHTML;
-    }
+        $scope.githubprojects = projects;
+    });
 
-    //homemade web scraper
-    function getfromURL(URL, success=function(){}, fail=function(){}, dataType=String){
-        $.get(URL)
-            .done(function(data){
-                //check if get works
-                if(data && data!=null && data instanceof dataType){
-                    console.log("Data loaded from " + URL);
-                    success(data);
-                }
-                else{
-                    console.error("Data was null or not expected format " + dataType + ". Failed to load from: " + URL);
-                    fail();
-                }
-            })
-            .fail(function(jqHXR, textStatus, errorThrown){
-                console.error("Error with using get from: " + URL + " from error " + errorThrown);
-                fail();
-            });
-    }
-    
-    //gets repo data from Github API
-    function getGithubRepoData(projectHTML){
-        //if success, add projects, if not, remove header
-        getfromURL(githubRepoURL,
-            function(repoData) {
-                $("#github-projects-header").after(convertProjectToHTML(repoData, projectHTML));
-            },
-            function() {
-                $("#github-projects-header").remove();
-            },
-            Array
-            );
-    }
-    //gets repo data from personal json
-    function getOtherProjectData(projectHTML){
-        //if success, add projects, if not, remove header
-        getfromURL(otherProjectURL,
-            function(projectData) {
-                $("#other-projects-header").after(convertProjectToHTML(projectData, projectHTML));
-            },
-            function() {
-                $("#other-projects-header").remove();
-            },
-            Array
-            );
-    }
-    //gets HTML template from personal views/projects.json
-    getfromURL(projectHTMLURL, 
-        function(projectHTML){
-            getGithubRepoData(projectHTML);
-            getOtherProjectData(projectHTML);
+    $scope.otherprojects = [
+        {
+            "img_url" : "img/projects/EOP.jpg",
+            "name" : "UC Berkeley Education Opportunity Program",
+            "description" : "Website designed for UC Berkeley's Educational Opportunity Program, which provides first generation and low-income students with guidance and resources.",
+            "html_url": "",
+            "homepage": "http://eop.berkeley.edu/",
         },
-        function() {
-            //if you can't get projectHTMLTemplate, then just link them to your Github
-            $("#projects h1").nextAll().empty();
-            $("#projects").append("<h2>Check out my <a href='https://www.github.com/erikyangs' target='_blank'>projects on Github:</a></h2>");
+        {
+            "img_url" : "img/projects/BearMaps.jpg",
+            "name" : "BearMaps",
+            "description" : "Web application that rasterizes map images and routes directions between points using A* path-finding. Code available upon request.",
         },
-        Array
-        );
-
+        {
+            "img_url" : "img/projects/UNRAC.jpg",
+            "name" : "UN Refugee Agency at Cal",
+            "description" : "Website designed for student organization at UC Berkeley raising awareness about refugees around the world.",
+            "html_url": "https://github.com/UNRAC/unrac.github.io",
+            "homepage": "https://www.ocf.berkeley.edu/~unrac/#/",
+        },
+        {
+            "img_url" : "img/projects/FZCF.jpg",
+            "name" : "FengZheng Cultural Foundation Website",
+            "description" : "Website designed for charity organization in Texas promoting education equality.",
+            "html_url": "https://github.com/fzcf/fzcf.github.io",
+            "homepage": "http://fzculturalfoundation.org/index.html",
+        },
+    ];
 });

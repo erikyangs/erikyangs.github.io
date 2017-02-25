@@ -81,18 +81,60 @@ regular projects content
         Previously: Software Development Intern at <a href='http://openisdm.iis.sinica.edu.tw/' target="_blank" title="Go to Academia Sinica OpenISDM Homepage">Academia Sinica</a>
     </div>
 
-    <div id="projects" class="container padding-top-sm">
+    <!--<div id="projects" class="container padding-top-sm">
         <h1>Projects</h1>
         <h2 id="github-projects-header">Updated just now from <a href="https://www.github.com/erikyangs" target="_blank" title="Go to @erikyangs Github">@erikyangs Github:</a></h2>
-        <!--Github projects should insert above with personal Javascript-->
         <h2 id="other-projects-header">Other projects:</h1>
-        <!--Other projects should insert above with personal Javascript-->
+    </div>-->
+
+    <div id="projects" class="container padding-top-sm ng-cloak" ng-app="projects-app" ng-controller="projects-controller">
+        <h1>Projects</h1>
+        <h2 id="github-projects-header">Updated just now from <a href="https://www.github.com/erikyangs" target="_blank" title="Go to @erikyangs Github">@erikyangs Github:</a></h2>
+        <div class="row">
+            <div ng-repeat="project in githubprojects">
+                <div ng-if="$index%3==0 && $index!=0" class="clearfix"></div>
+                <div ng-if="project.name && project.description" class="col-sm-4 project-container">
+                    <div class="project">
+                        <img ng-if="project.img_url" ng-src="{{project.img_url}}"></img>
+                        <div class="project-content">
+                            <h3>{{project.name}}</h3>
+                            <span>{{project.description}}</span>
+                            <div ng-if="project.html_url || project.homepage" class="center-container text-center">
+                                <a ng-href="{{project.html_url}}" target="_blank"><div class=button>Source Code</div></a>
+                                <a ng-href="{{project.homepage}}" target="_blank"><div class=button>View Project</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="other-projects-header">Other projects:</h1>
+        <div class="row">
+            <div ng-repeat="project in otherprojects">
+                <div ng-if="$index%3==0 && $index!=0" class="clearfix"></div>
+                <div ng-if="project.name && project.description" class="col-sm-4 project-container">
+                    <div class="project">
+                        <img ng-if="project.img_url" ng-src="{{project.img_url}}"></img>
+                        <div class="project-content">
+                            <h3>{{project.name}}</h3>
+                            <span>{{project.description}}</span>
+                            <div ng-if="project.html_url || project.homepage" class="center-container text-center">
+                                <a ng-href="{{project.html_url}}" target="_blank"><div class=button>Source Code</div></a>
+                                <a ng-href="{{project.homepage}}" target="_blank"><div class=button>View Project</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div style="height: 10vh"></div>
 
     <!--Javascript-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="js/particles.min.js"></script> 
     <script src="js/index.js"></script>
 </body>

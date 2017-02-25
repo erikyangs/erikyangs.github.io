@@ -321,9 +321,9 @@ h3{
 	}
 }
 
-.project-container:nth-child(2){
+/*.project-container:nth-child(2){
 	padding: 0px 0px;
-}
+}*/
 
 @media (max-width: 768px) {
 	.project-container:nth-child(2){
@@ -338,13 +338,9 @@ h3{
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 
-    transition: all 0.1s;
-}
+    margin-bottom: 10px;
 
-@media (max-width: 768px) {
-	.project{
-		margin-bottom: 10px;
-	}
+    transition: all 0.1s;
 }
 
 .project:hover{
