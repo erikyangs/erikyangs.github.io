@@ -103,7 +103,7 @@ app.controller("projects-controller", function($scope, $http){
             "name" : "UN Refugee Agency at Cal",
             "description" : "Website designed for student organization at UC Berkeley raising awareness about refugees around the world.",
             "html_url": "https://github.com/UNRAC/unrac.github.io",
-            "homepage": "https://www.ocf.berkeley.edu/~unrac/#/",
+            "homepage": "https://www.ocf.io/unrac",
         },
         {
             "img_url" : "img/projects/FZCF.jpg",
