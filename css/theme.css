@@ -334,10 +334,11 @@ h3{
 
 .project{
 	border: 1px #DDD solid;
+	border-radius: 2px;
 
-	/*	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);*/
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 
     margin-bottom: 15px;
 
